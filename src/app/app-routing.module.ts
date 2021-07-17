@@ -1,5 +1,5 @@
 import { NgModule } from "@angular/core";
-import { Routes } from "@angular/router";
+import { RouterModule, Routes } from "@angular/router";
 
 import { PorPaisComponent } from './pais/pages/porPais/porPais.component';
 import { PorRegionComponent } from './pais/pages/porRegion/porRegion.compoenent';
@@ -26,15 +26,20 @@ const routes: Routes = [
         component:VerPaisComponent
     },
     {
-        path:'*',
+        path:'**',
+        //Se puede colcoar el 404Component
         redirectTo:''
     }
 ]
 
 @NgModule({
     declarations:[],
-    imports:[],
-    exports:[],
+    imports:[
+        RouterModule.forRoot(routes)
+    ],
+    exports:[
+        RouterModule
+    ],
     providers:[]
 })
 export class AppRouting{
