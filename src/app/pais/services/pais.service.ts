@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
+//import { catchError } from "rxjs/operators";
 
 
 @Injectable({
@@ -23,6 +24,10 @@ buscarPais(Termino:string) : Observable<any>
     const url = `${this.apiUrl}/name/${Termino}`;
 
     return this.http.get(url);
+    /*.pipe(
+                catcherror(err => of([]))
+    )
+    */
 }
 
 }

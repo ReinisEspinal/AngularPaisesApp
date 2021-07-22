@@ -20,12 +20,12 @@
 
 <hr>
 
-<div class="alert alert-danger">
-<p>No se encontró nada con el termino</p>
+<div *ngIf="hayError" class="alert alert-danger" >
+<p>No se encontró nada con el {{termino}}</p>
 </div>
 
 <!--TABLA DE PAIS-->
-<div class="row">
+<div class="row" *ngIf="!hayError">
     <div class="col">
         <table class="table">
             <thead>
